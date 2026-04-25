@@ -1,0 +1,335 @@
+{
+  "generated": "2026-04-20T05:09:18.443843",
+  "snapshot": {
+    "timestamp": "2026-04-20T05:09:18.443870",
+    "poll": 2,
+    "switches": 3,
+    "flows": 10,
+    "total_packets": 186114,
+    "total_bytes": 45893377,
+    "throughput_mbps": 56.35,
+    "total_dropped": 553,
+    "per_switch": {
+      "s1": {
+        "name": "core-sw-1",
+        "dpid": "00:00:00:00:00:01",
+        "flows": 3,
+        "rx_pkts": 147511,
+        "rx_bytes": 9623035,
+        "dropped": 130
+      },
+      "s2": {
+        "name": "agg-sw-2",
+        "dpid": "00:00:00:00:00:02",
+        "flows": 4,
+        "rx_pkts": 198121,
+        "rx_bytes": 22887458,
+        "dropped": 191
+      },
+      "s3": {
+        "name": "edge-sw-3",
+        "dpid": "00:00:00:00:00:03",
+        "flows": 3,
+        "rx_pkts": 164369,
+        "rx_bytes": 29867378,
+        "dropped": 232
+      }
+    }
+  },
+  "flows": [
+    {
+      "table_id": 0,
+      "priority": 300,
+      "match": {
+        "in_port": 1,
+        "eth_type": 2048,
+        "ip_proto": 6,
+        "ipv4_src": "10.0.2.5",
+        "ipv4_dst": "10.0.0.9",
+        "tcp_dst": 22
+      },
+      "packet_count": 19957,
+      "byte_count": 7692960,
+      "duration_sec": 433,
+      "duration_nsec": 0,
+      "idle_timeout": 0,
+      "hard_timeout": 0,
+      "cookie": 43776,
+      "match_str": "10.0.2.5 -> 10.0.0.9:22 [TCP]",
+      "switch": "s3",
+      "switch_name": "edge-sw-3"
+    },
+    {
+      "table_id": 0,
+      "priority": 300,
+      "match": {
+        "in_port": 3,
+        "eth_type": 2048,
+        "ip_proto": 1,
+        "ipv4_src": "10.0.0.4",
+        "ipv4_dst": "10.0.0.1",
+        "tcp_dst": 0
+      },
+      "packet_count": 21503,
+      "byte_count": 7404819,
+      "duration_sec": 441,
+      "duration_nsec": 0,
+      "idle_timeout": 0,
+      "hard_timeout": 0,
+      "cookie": 43778,
+      "match_str": "10.0.0.4 -> 10.0.0.1 [ICMP]",
+      "switch": "s2",
+      "switch_name": "agg-sw-2"
+    },
+    {
+      "table_id": 0,
+      "priority": 300,
+      "match": {
+        "in_port": 3,
+        "eth_type": 2048,
+        "ip_proto": 17,
+        "ipv4_src": "10.0.0.3",
+        "ipv4_dst": "8.8.8.8",
+        "tcp_dst": 53
+      },
+      "packet_count": 26313,
+      "byte_count": 5678674,
+      "duration_sec": 135,
+      "duration_nsec": 0,
+      "idle_timeout": 0,
+      "hard_timeout": 0,
+      "cookie": 43778,
+      "match_str": "10.0.0.3 -> 8.8.8.8:53 [UDP]",
+      "switch": "s1",
+      "switch_name": "core-sw-1"
+    },
+    {
+      "table_id": 1,
+      "priority": 50,
+      "match": {
+        "in_port": 2,
+        "eth_type": 2048,
+        "ip_proto": 6,
+        "ipv4_src": "192.168.1.10",
+        "ipv4_dst": "10.0.0.1",
+        "tcp_dst": 8080
+      },
+      "packet_count": 19472,
+      "byte_count": 5520544,
+      "duration_sec": 396,
+      "duration_nsec": 0,
+      "idle_timeout": 0,
+      "hard_timeout": 0,
+      "cookie": 43777,
+      "match_str": "192.168.1.10 -> 10.0.0.1:8080 [TCP]",
+      "switch": "s3",
+      "switch_name": "edge-sw-3"
+    },
+    {
+      "table_id": 0,
+      "priority": 50,
+      "match": {
+        "in_port": 1,
+        "eth_type": 2048,
+        "ip_proto": 6,
+        "ipv4_src": "10.0.0.1",
+        "ipv4_dst": "10.0.0.5",
+        "tcp_dst": 80
+      },
+      "packet_count": 14063,
+      "byte_count": 4813903,
+      "duration_sec": 78,
+      "duration_nsec": 0,
+      "idle_timeout": 0,
+      "hard_timeout": 0,
+      "cookie": 43776,
+      "match_str": "10.0.0.1 -> 10.0.0.5:80 [TCP]",
+      "switch": "s1",
+      "switch_name": "core-sw-1"
+    },
+    {
+      "table_id": 1,
+      "priority": 50,
+      "match": {
+        "in_port": 2,
+        "eth_type": 2048,
+        "ip_proto": 6,
+        "ipv4_src": "10.0.0.2",
+        "ipv4_dst": "10.0.1.1",
+        "tcp_dst": 443
+      },
+      "packet_count": 15634,
+      "byte_count": 4441461,
+      "duration_sec": 545,
+      "duration_nsec": 0,
+      "idle_timeout": 0,
+      "hard_timeout": 0,
+      "cookie": 43777,
+      "match_str": "10.0.0.2 -> 10.0.1.1:443 [TCP]",
+      "switch": "s1",
+      "switch_name": "core-sw-1"
+    },
+    {
+      "table_id": 1,
+      "priority": 100,
+      "match": {
+        "in_port": 4,
+        "eth_type": 2048,
+        "ip_proto": 6,
+        "ipv4_src": "10.0.2.5",
+        "ipv4_dst": "10.0.0.9",
+        "tcp_dst": 22
+      },
+      "packet_count": 27903,
+      "byte_count": 4027484,
+      "duration_sec": 437,
+      "duration_nsec": 0,
+      "idle_timeout": 0,
+      "hard_timeout": 0,
+      "cookie": 43779,
+      "match_str": "10.0.2.5 -> 10.0.0.9:22 [TCP]",
+      "switch": "s2",
+      "switch_name": "agg-sw-2"
+    },
+    {
+      "table_id": 1,
+      "priority": 200,
+      "match": {
+        "in_port": 2,
+        "eth_type": 2048,
+        "ip_proto": 17,
+        "ipv4_src": "10.0.1.2",
+        "ipv4_dst": "10.0.2.1",
+        "tcp_dst": 5001
+      },
+      "packet_count": 15981,
+      "byte_count": 2673558,
+      "duration_sec": 144,
+      "duration_nsec": 0,
+      "idle_timeout": 0,
+      "hard_timeout": 0,
+      "cookie": 43777,
+      "match_str": "10.0.1.2 -> 10.0.2.1:5001 [UDP]",
+      "switch": "s2",
+      "switch_name": "agg-sw-2"
+    },
+    {
+      "table_id": 0,
+      "priority": 50,
+      "match": {
+        "in_port": 3,
+        "eth_type": 2048,
+        "ip_proto": 6,
+        "ipv4_src": "10.0.3.1",
+        "ipv4_dst": "10.0.4.2",
+        "tcp_dst": 3306
+      },
+      "packet_count": 10302,
+      "byte_count": 1915788,
+      "duration_sec": 34,
+      "duration_nsec": 0,
+      "idle_timeout": 0,
+      "hard_timeout": 0,
+      "cookie": 43778,
+      "match_str": "10.0.3.1 -> 10.0.4.2:3306 [TCP]",
+      "switch": "s3",
+      "switch_name": "edge-sw-3"
+    },
+    {
+      "table_id": 0,
+      "priority": 50,
+      "match": {
+        "in_port": 1,
+        "eth_type": 2048,
+        "ip_proto": 17,
+        "ipv4_src": "10.0.0.3",
+        "ipv4_dst": "8.8.8.8",
+        "tcp_dst": 53
+      },
+      "packet_count": 14986,
+      "byte_count": 1724186,
+      "duration_sec": 531,
+      "duration_nsec": 0,
+      "idle_timeout": 0,
+      "hard_timeout": 0,
+      "cookie": 43776,
+      "match_str": "10.0.0.3 -> 8.8.8.8:53 [UDP]",
+      "switch": "s2",
+      "switch_name": "agg-sw-2"
+    }
+  ],
+  "history": [
+    {
+      "timestamp": "2026-04-20T05:09:11.930171",
+      "poll": 1,
+      "switches": 3,
+      "flows": 10,
+      "total_packets": 167443,
+      "total_bytes": 34941268,
+      "throughput_mbps": 279.53,
+      "total_dropped": 518,
+      "per_switch": {
+        "s1": {
+          "name": "core-sw-1",
+          "dpid": "00:00:00:00:00:01",
+          "flows": 3,
+          "rx_pkts": 145397,
+          "rx_bytes": 7264442,
+          "dropped": 125
+        },
+        "s2": {
+          "name": "agg-sw-2",
+          "dpid": "00:00:00:00:00:02",
+          "flows": 4,
+          "rx_pkts": 192170,
+          "rx_bytes": 18316794,
+          "dropped": 181
+        },
+        "s3": {
+          "name": "edge-sw-3",
+          "dpid": "00:00:00:00:00:03",
+          "flows": 3,
+          "rx_pkts": 156527,
+          "rx_bytes": 24937094,
+          "dropped": 212
+        }
+      }
+    },
+    {
+      "timestamp": "2026-04-20T05:09:16.930826",
+      "poll": 2,
+      "switches": 3,
+      "flows": 10,
+      "total_packets": 186114,
+      "total_bytes": 45893377,
+      "throughput_mbps": 73.4,
+      "total_dropped": 553,
+      "per_switch": {
+        "s1": {
+          "name": "core-sw-1",
+          "dpid": "00:00:00:00:00:01",
+          "flows": 3,
+          "rx_pkts": 147511,
+          "rx_bytes": 9623035,
+          "dropped": 130
+        },
+        "s2": {
+          "name": "agg-sw-2",
+          "dpid": "00:00:00:00:00:02",
+          "flows": 4,
+          "rx_pkts": 198121,
+          "rx_bytes": 22887458,
+          "dropped": 191
+        },
+        "s3": {
+          "name": "edge-sw-3",
+          "dpid": "00:00:00:00:00:03",
+          "flows": 3,
+          "rx_pkts": 164369,
+          "rx_bytes": 29867378,
+          "dropped": 232
+        }
+      }
+    }
+  ]
+}
